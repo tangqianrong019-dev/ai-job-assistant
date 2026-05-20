@@ -1,0 +1,22 @@
+# 环境变量 — 包含 API Key，禁止提交
+.env
+.env.local
+*.env.local
+
+# 依赖
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+
+# 构建产物
+.next/
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+
+# Claude Code
+.claude/
