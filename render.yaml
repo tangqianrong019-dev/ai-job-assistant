@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: ai-job-assistant-backend
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: DEEPSEEK_API_KEY
+        sync: false
+      - key: DEEPSEEK_BASE_URL
+        sync: false
+      - key: DEBUG
+        value: "false"
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      - key: SUPABASE_JWT_SECRET
+        sync: false
+      - key: LEMON_SQUEEZY_CHECKOUT_URL
+        sync: false
+      - key: LEMON_SQUEEZY_CHECKOUT_URL_YEARLY
+        sync: false
+      - key: LEMON_SQUEEZY_WEBHOOK_SECRET
+        sync: false
+      - key: CORS_ORIGINS
+        value: "http://localhost:3000,https://your-frontend.vercel.app"
+    rootDir: backend
